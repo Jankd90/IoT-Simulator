@@ -10,15 +10,15 @@
 // Approach 1 //
 //------------
 
-CREATE (:Device {deviceName: 'Anchor_1',                    // /ip/deviceName
-                            deviceType: 'ESP32_UWB_ANCHOR', // /ip/deviceType
-                            MAC: 'ff:ff:ff:ff',             // /ip/MAC
-                            status: 'active',               // /ip/status
-                            connected: 'True',              // /ip/status/connected
-                            FeatureOfInterest: 'TAG_1',     // /deviceName/FeatureOfInterest
-                            observation: '1m',              // /deviceName/observation/Result
-                            UWB_frequency: 112500,          // /ip/SENSOR_NAME/Frequency
-                            communication_frequency: 50})   // /ip/communication/Frequency
+CREATE (:Device {deviceName: 'Anchor_1',                    // MQTT : /ip/deviceName
+                            deviceType: 'ESP32_UWB_ANCHOR', // MQTT : /ip/deviceType
+                            MAC: 'ff:ff:ff:ff',             // MQTT : /ip/MAC
+                            status: 'active',               // MQTT : /ip/status
+                            connected: 'True',              // MQTT : /ip/status/connected
+                            FeatureOfInterest: 'TAG_1',     // MQTT : /deviceName/FeatureOfInterest
+                            observation: '1m',              // MQTT : /deviceName/observation/Result
+                            UWB_frequency: 112500,          // MQTT : /ip/SENSOR_NAME/Frequency
+                            communication_frequency: 50})   // MQTT : /ip/communication/Frequency
 
 
 
