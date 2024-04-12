@@ -52,9 +52,9 @@ class TemperatureDatabase:
 
 # Example usage
 if __name__ == "__main__":
-    uri = "neo4j+s://e91e2d79.databases.neo4j.io"
-    user = "neo4j"
-    password = "v2agybb9KPIBM9LmwHcvehVkzub0z1cNZ51IOpNmx9s"
+    uri = ""
+    user = ""
+    password = ""
 
     db = TemperatureDatabase(uri, user, password)
     
