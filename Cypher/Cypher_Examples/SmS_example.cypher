@@ -4,24 +4,26 @@
 //-------------------------------------------
 // Object Person
 //-------------------------------------------
+CREATE (P_1:Person {name:'Person 1', main_room:'Room_46'}),
+       (P_2:Person {name:'Person 2', main_room:'Room_46'}),
+       (P_3:Person {name:'Person 3', main_room:'Room_46'}),
+       (P_4:Person {name:'Person 4', main_room:'Room_46'}),
+       (P_5:Person {name:'Person 5', main_room:'Room_46'})
 
-//------------
-// Tags
-//------------
-CREATE (Tag_1:Person {sensor_type:'UWB Tag', name:'TAG001', battery_level:80, data_rate:112500, manufacturer:'Makerfabs', status:'active'}),
-       (Tag_2:Person {sensor_type:'UWB Tag', name:'TAG002', battery_level:85, data_rate:125000, manufacturer:'Makerfabs', status:'active'}),
-       (Tag_3:Person {sensor_type:'UWB Tag', name:'TAG003', battery_level:90, data_rate:120000, manufacturer:'Makerfabs', status:'active'}),
-       (Tag_4:Person {sensor_type:'UWB Tag', name:'TAG004', battery_level:75, data_rate:110000, manufacturer:'Makerfabs', status:'active'}),
-       (Tag_5:Person {sensor_type:'UWB Tag', name:'TAG005', battery_level:95, data_rate:115000, manufacturer:'Makerfabs', status:'active'}),
-       (Tag_6:Person {sensor_type:'UWB Tag', name:'TAG006', battery_level:88, data_rate:130000, manufacturer:'Makerfabs', status:'active'}),
-       (Tag_7:Person {sensor_type:'UWB Tag', name:'TAG007', battery_level:92, data_rate:122000, manufacturer:'Makerfabs', status:'active'}),
-       (Tag_8:Person {sensor_type:'UWB Tag', name:'TAG008', battery_level:78, data_rate:118000, manufacturer:'Makerfabs', status:'active'}),
-       (Tag_9:Person {sensor_type:'UWB Tag', name:'TAG009', battery_level:82, data_rate:124000, manufacturer:'Makerfabs', status:'active'}),
-       (Tag_10:Person {sensor_type:'UWB Tag', name:'TAG010', battery_level:87, data_rate:128000, manufacturer:'Makerfabs', status:'active'})
 
 //-------------------------------------------
 // Object Device
 //-------------------------------------------
+
+//------------
+// Tags
+//------------
+CREATE (Tag_1:Device {sensor_type:'UWB Tag', name:'TAG001', battery_level:80, data_rate:112500, manufacturer:'Makerfabs', status:'active'}),
+       (Tag_2:Device {sensor_type:'UWB Tag', name:'TAG002', battery_level:85, data_rate:125000, manufacturer:'Makerfabs', status:'active'}),
+       (Tag_3:Device {sensor_type:'UWB Tag', name:'TAG002', battery_level:85, data_rate:125000, manufacturer:'Makerfabs', status:'active'}),
+       (Tag_4:Device {sensor_type:'UWB Tag', name:'TAG002', battery_level:85, data_rate:125000, manufacturer:'Makerfabs', status:'active'}),
+       (Tag_5:Device {sensor_type:'UWB Tag', name:'TAG003', battery_level:90, data_rate:120000, manufacturer:'Makerfabs', status:'active'})
+
 
 //------------
 // Anchors
@@ -61,123 +63,96 @@ CREATE (Washroom_45)-[:ROOM_IN]->(Room_45),
        (Washroom_46)-[:ROOM_IN]->(Room_46)
 
 // Placed In Relationships
-CREATE (Anchor_1)-[:PLACED_IN]->(Washroom_46),
-       (Anchor_2)-[:PLACED_IN]->(Room_46),
-       (Anchor_3)-[:PLACED_IN]->(Hallway),
+CREATE (Anchor_1)-[:PLACED_IN]->(Room_45),
+       (Anchor_2)-[:PLACED_IN]->(Room_45),
+       (Anchor_3)-[:PLACED_IN]->(Room_45),
        (Anchor_4)-[:PLACED_IN]->(Washroom_46),
-       (Anchor_5)-[:PLACED_IN]->(Room_46),
-       (Anchor_6)-[:PLACED_IN]->(Washroom_45),
-       (Anchor_7)-[:PLACED_IN]->(Room_45),
-       (Anchor_8)-[:PLACED_IN]->(Washroom_46),
-       (Anchor_9)-[:PLACED_IN]->(Hallway),
+       (Anchor_5)-[:PLACED_IN]->(Washroom_46),
+       (Anchor_6)-[:PLACED_IN]->(Washroom_46),
+       (Anchor_7)-[:PLACED_IN]->(Room_46),
+       (Anchor_8)-[:PLACED_IN]->(Room_46),
+       (Anchor_9)-[:PLACED_IN]->(Room_46),
        (Anchor_10)-[:PLACED_IN]->(Washroom_45),
-       (Anchor_11)-[:PLACED_IN]->(Room_45),
-       (Anchor_12)-[:PLACED_IN]->(Hallway),
-       (Anchor_13)-[:PLACED_IN]->(Room_46),
-       (Anchor_14)-[:PLACED_IN]->(Washroom_45),
-       (Anchor_15)-[:PLACED_IN]->(Room_45)
+       (Anchor_11)-[:PLACED_IN]->(Washroom_45),
+       (Anchor_12)-[:PLACED_IN]->(Washroom_45),
+       (Anchor_13)-[:PLACED_IN]->(Hallway),
+       (Anchor_14)-[:PLACED_IN]->(Hallway),
+       (Anchor_15)-[:PLACED_IN]->(Hallway)
 
 // Contains Device Relationships
-CREATE (Room_45)-[:CONTAINS_DEVICE]->(Anchor_7),
-       (Room_45)-[:CONTAINS_DEVICE]->(Anchor_11),
-       (Room_45)-[:CONTAINS_DEVICE]->(Anchor_15),
-       (Washroom_45)-[:CONTAINS_DEVICE]->(Anchor_6),
-       (Washroom_45)-[:CONTAINS_DEVICE]->(Anchor_10),
-       (Washroom_45)-[:CONTAINS_DEVICE]->(Anchor_14),
-       (Room_46)-[:CONTAINS_DEVICE]->(Anchor_5),
-       (Room_46)-[:CONTAINS_DEVICE]->(Anchor_2),
-       (Room_46)-[:CONTAINS_DEVICE]->(Anchor_13),
+CREATE (Room_45)-[:CONTAINS_DEVICE]->(Anchor_1),
+       (Room_45)-[:CONTAINS_DEVICE]->(Anchor_2),
+       (Room_45)-[:CONTAINS_DEVICE]->(Anchor_3),
        (Washroom_46)-[:CONTAINS_DEVICE]->(Anchor_4),
-       (Washroom_46)-[:CONTAINS_DEVICE]->(Anchor_8),
-       (Washroom_46)-[:CONTAINS_DEVICE]->(Anchor_1),
-       (Hallway)-[:CONTAINS_DEVICE]->(Anchor_3),
-       (Hallway)-[:CONTAINS_DEVICE]->(Anchor_9),
-       (Hallway)-[:CONTAINS_DEVICE]->(Anchor_12)
+       (Washroom_46)-[:CONTAINS_DEVICE]->(Anchor_5),
+       (Washroom_46)-[:CONTAINS_DEVICE]->(Anchor_6),
+       (Room_46)-[:CONTAINS_DEVICE]->(Anchor_7),
+       (Room_46)-[:CONTAINS_DEVICE]->(Anchor_8),
+       (Room_46)-[:CONTAINS_DEVICE]->(Anchor_9),
+       (Washroom_45)-[:CONTAINS_DEVICE]->(Anchor_10),
+       (Washroom_45)-[:CONTAINS_DEVICE]->(Anchor_11),
+       (Washroom_45)-[:CONTAINS_DEVICE]->(Anchor_12),
+       (Hallway)-[:CONTAINS_DEVICE]->(Anchor_13),
+       (Hallway)-[:CONTAINS_DEVICE]->(Anchor_14),
+       (Hallway)-[:CONTAINS_DEVICE]->(Anchor_15)
 
 // Connected To Relationships
-CREATE (Tag_1)-[:CONNECTED_TO]->(Anchor_4),
-       (Tag_1)-[:CONNECTED_TO]->(Anchor_8),
-       (Tag_1)-[:CONNECTED_TO]->(Anchor_1),
+CREATE (Tag_1)-[:CONNECTED_TO]->(Anchor_1),
+       (Tag_1)-[:CONNECTED_TO]->(Anchor_2),
+       (Tag_1)-[:CONNECTED_TO]->(Anchor_3),
        (Tag_2)-[:CONNECTED_TO]->(Anchor_4),
-       (Tag_2)-[:CONNECTED_TO]->(Anchor_8),
-       (Tag_2)-[:CONNECTED_TO]->(Anchor_1),
+       (Tag_2)-[:CONNECTED_TO]->(Anchor_5),
+       (Tag_2)-[:CONNECTED_TO]->(Anchor_6),
        (Tag_3)-[:CONNECTED_TO]->(Anchor_7),
-       (Tag_3)-[:CONNECTED_TO]->(Anchor_11),
-       (Tag_3)-[:CONNECTED_TO]->(Anchor_15),
-       (Tag_4)-[:CONNECTED_TO]->(Anchor_7),
+       (Tag_3)-[:CONNECTED_TO]->(Anchor_8),
+       (Tag_3)-[:CONNECTED_TO]->(Anchor_9),
+       (Tag_4)-[:CONNECTED_TO]->(Anchor_10),
        (Tag_4)-[:CONNECTED_TO]->(Anchor_11),
-       (Tag_4)-[:CONNECTED_TO]->(Anchor_15),
-       (Tag_5)-[:CONNECTED_TO]->(Anchor_7),
-       (Tag_5)-[:CONNECTED_TO]->(Anchor_11),
-       (Tag_5)-[:CONNECTED_TO]->(Anchor_15),
-       (Tag_6)-[:CONNECTED_TO]->(Anchor_5),
-       (Tag_6)-[:CONNECTED_TO]->(Anchor_2),
-       (Tag_6)-[:CONNECTED_TO]->(Anchor_13),
-       (Tag_7)-[:CONNECTED_TO]->(Anchor_5),
-       (Tag_7)-[:CONNECTED_TO]->(Anchor_2),
-       (Tag_7)-[:CONNECTED_TO]->(Anchor_13),
-       (Tag_8)-[:CONNECTED_TO]->(Anchor_3),
-       (Tag_8)-[:CONNECTED_TO]->(Anchor_9),
-       (Tag_8)-[:CONNECTED_TO]->(Anchor_12),
-       (Tag_9)-[:CONNECTED_TO]->(Anchor_3),
-       (Tag_9)-[:CONNECTED_TO]->(Anchor_9),
-       (Tag_9)-[:CONNECTED_TO]->(Anchor_12),
-       (Tag_10)-[:CONNECTED_TO]->(Anchor_6),
-       (Tag_10)-[:CONNECTED_TO]->(Anchor_10),
-       (Tag_10)-[:CONNECTED_TO]->(Anchor_14)
+       (Tag_4)-[:CONNECTED_TO]->(Anchor_12),
+       (Tag_5)-[:CONNECTED_TO]->(Anchor_13),
+       (Tag_5)-[:CONNECTED_TO]->(Anchor_14),
+       (Tag_5)-[:CONNECTED_TO]->(Anchor_15)
 
 // Associated With Relationships
-CREATE (Tag_1)<-[:ASSOCIATED_WITH]-(Anchor_4),
-       (Tag_1)<-[:ASSOCIATED_WITH]-(Anchor_8),
-       (Tag_1)<-[:ASSOCIATED_WITH]-(Anchor_1),
+CREATE (Tag_1)<-[:ASSOCIATED_WITH]-(Anchor_1),
+       (Tag_1)<-[:ASSOCIATED_WITH]-(Anchor_2),
+       (Tag_1)<-[:ASSOCIATED_WITH]-(Anchor_3),
        (Tag_2)<-[:ASSOCIATED_WITH]-(Anchor_4),
-       (Tag_2)<-[:ASSOCIATED_WITH]-(Anchor_8),
-       (Tag_2)<-[:ASSOCIATED_WITH]-(Anchor_1),
+       (Tag_2)<-[:ASSOCIATED_WITH]-(Anchor_5),
+       (Tag_2)<-[:ASSOCIATED_WITH]-(Anchor_6),
        (Tag_3)<-[:ASSOCIATED_WITH]-(Anchor_7),
-       (Tag_3)<-[:ASSOCIATED_WITH]-(Anchor_11),
-       (Tag_3)<-[:ASSOCIATED_WITH]-(Anchor_15),
-       (Tag_4)<-[:ASSOCIATED_WITH]-(Anchor_7),
+       (Tag_3)<-[:ASSOCIATED_WITH]-(Anchor_8),
+       (Tag_3)<-[:ASSOCIATED_WITH]-(Anchor_9),
+       (Tag_4)<-[:ASSOCIATED_WITH]-(Anchor_10),
        (Tag_4)<-[:ASSOCIATED_WITH]-(Anchor_11),
-       (Tag_4)<-[:ASSOCIATED_WITH]-(Anchor_15),
-       (Tag_5)<-[:ASSOCIATED_WITH]-(Anchor_7),
-       (Tag_5)<-[:ASSOCIATED_WITH]-(Anchor_11),
-       (Tag_5)<-[:ASSOCIATED_WITH]-(Anchor_15),
-       (Tag_6)<-[:ASSOCIATED_WITH]-(Anchor_5),
-       (Tag_6)<-[:ASSOCIATED_WITH]-(Anchor_2),
-       (Tag_6)<-[:ASSOCIATED_WITH]-(Anchor_13),
-       (Tag_7)<-[:ASSOCIATED_WITH]-(Anchor_5),
-       (Tag_7)<-[:ASSOCIATED_WITH]-(Anchor_2),
-       (Tag_7)<-[:ASSOCIATED_WITH]-(Anchor_13),
-       (Tag_8)<-[:ASSOCIATED_WITH]-(Anchor_3),
-       (Tag_8)<-[:ASSOCIATED_WITH]-(Anchor_9),
-       (Tag_8)<-[:ASSOCIATED_WITH]-(Anchor_12),
-       (Tag_9)<-[:ASSOCIATED_WITH]-(Anchor_3),
-       (Tag_9)<-[:ASSOCIATED_WITH]-(Anchor_9),
-       (Tag_9)<-[:ASSOCIATED_WITH]-(Anchor_12),
-       (Tag_10)<-[:ASSOCIATED_WITH]-(Anchor_6),
-       (Tag_10)<-[:ASSOCIATED_WITH]-(Anchor_10),
-       (Tag_10)<-[:ASSOCIATED_WITH]-(Anchor_14)
+       (Tag_4)<-[:ASSOCIATED_WITH]-(Anchor_12),
+       (Tag_5)<-[:ASSOCIATED_WITH]-(Anchor_13),
+       (Tag_5)<-[:ASSOCIATED_WITH]-(Anchor_14),
+       (Tag_5)<-[:ASSOCIATED_WITH]-(Anchor_15)
 
 // Located In Relationships
-CREATE (Tag_1)-[:LOCATED_IN]->(Washroom_46),
+CREATE (Tag_1)-[:LOCATED_IN]->(Room_45),
        (Tag_2)-[:LOCATED_IN]->(Washroom_46),
-       (Tag_3)-[:LOCATED_IN]->(Room_45),
-       (Tag_4)-[:LOCATED_IN]->(Room_45),
-       (Tag_5)-[:LOCATED_IN]->(Room_45),
-       (Tag_6)-[:LOCATED_IN]->(Room_46),
-       (Tag_7)-[:LOCATED_IN]->(Room_46),
-       (Tag_8)-[:LOCATED_IN]->(Hallway),
-       (Tag_9)-[:LOCATED_IN]->(Hallway),
-       (Tag_10)-[:LOCATED_IN]->(Washroom_45)
-
+       (Tag_3)-[:LOCATED_IN]->(Room_46),
+       (Tag_4)-[:LOCATED_IN]->(Washroom_45),
+       (Tag_5)-[:LOCATED_IN]->(Hallway)
 // Contains Person Relationships
-CREATE (Tag_1)<-[:CONTAINS_PERSON]-(Washroom_46),
-       (Tag_2)<-[:CONTAINS_PERSON]-(Washroom_46),
-       (Tag_3)<-[:CONTAINS_PERSON]-(Room_45),
-       (Tag_4)<-[:CONTAINS_PERSON]-(Room_45),
-       (Tag_5)<-[:CONTAINS_PERSON]-(Room_45),
-       (Tag_6)<-[:CONTAINS_PERSON]-(Room_46),
-       (Tag_7)<-[:CONTAINS_PERSON]-(Room_46),
-       (Tag_8)<-[:CONTAINS_PERSON]-(Hallway),
-       (Tag_9)<-[:CONTAINS_PERSON]-(Hallway),
-       (Tag_10)<-[:CONTAINS_PERSON]-(Washroom_45)
+CREATE (Tag_1)<-[:CONTAINS_TAG]-(Room_45),
+       (Tag_2)<-[:CONTAINS_TAG]-(Washroom_46),
+       (Tag_3)<-[:CONTAINS_TAG]-(Room_46),
+       (Tag_4)<-[:CONTAINS_TAG]-(Washroom_45),
+       (Tag_5)<-[:CONTAINS_TAG]-(Hallway)
+
+// Belongs To Relationships
+CREATE (Tag_1)-[:BELONGS_TO]->(P_1),
+       (Tag_2)-[:BELONGS_TO]->(P_2),
+       (Tag_3)-[:BELONGS_TO]->(P_3),
+       (Tag_4)-[:BELONGS_TO]->(P_4),
+       (Tag_5)-[:BELONGS_TO]->(P_5)
+
+// Wears Device Relationships
+CREATE (Tag_1)<-[:WEARS_DEVICE]-(P_1),
+       (Tag_2)<-[:WEARS_DEVICE]-(P_2),
+       (Tag_3)<-[:WEARS_DEVICE]-(P_3),
+       (Tag_4)<-[:WEARS_DEVICE]-(P_4),
+       (Tag_5)<-[:WEARS_DEVICE]-(P_5)
