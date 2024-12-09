@@ -1,5 +1,7 @@
 import paho.mqtt.client as mqtt
 import time
+import ast
+import os
 
 class RoomManager:
     def __init__(self):
@@ -47,12 +49,34 @@ position_topic = "activity/position"
 activity_time_topic = "activity/time"
 activity_finished_topic = "activity/Finished"
 
-# Input list of (room, object, duration) tuples
-input_list = [
-    ("Room_46", "Chair", 5), ("Room_46", "Bed", 10), ("Washroom_46", "Sink", 7), 
-    ("Room_46", "Couch", 3), ("Washroom_46", "Toilet", 8), 
-    ("Washroom_46", "Shower", 12), ("Room_46", "Kitchen", 6)
-]  # Example input processed sequentially
+folder_path = r'Scenarios'
+
+# # scenario list of (room, object, duration) tuples
+# input_list = [
+#     ("Room_46", "Chair", 5), ("Room_46", "Bed", 10), ("Washroom_46", "Sink", 7), 
+#     ("Room_46", "Couch", 3), ("Washroom_46", "Toilet", 8), 
+#     ("Washroom_46", "Shower", 12), ("Room_46", "Kitchen", 6)
+# ]  # Example input processed sequentially
+
+def read_scenario(file_path):
+    with open(file_path, 'r') as file:
+        scenario = file.read()
+    return scenario
+
+def get_list(file):
+    scenario = read_scenario(file)
+
+    # Convert string to a list of tuples
+    scenario_list = ast.literal_eval(scenario)
+    return scenario_list
+
+def count_files(folder_path):
+    # List all files in the folder
+    all_files = os.listdir(folder_path)
+
+    # Count the files
+    file_count = len(all_files)
+    return file_count
 
 # Create an instance of RoomManager
 room_manager = RoomManager()
@@ -137,8 +161,12 @@ try:
 
     client.loop_start()  # Start MQTT loop globally
 
-    while True:
-        process_input_list(input_list)
+    file_count = count_files(folder_path)
+
+    for i in range(1, file_count + 1):
+        scenario_path = fr'{folder_path}\Scenario_{i}.txt'
+        scenario = get_list(scenario_path)
+        process_input_list(scenario)
         time.sleep(5)  # Prevent excessive loop cycling
 
 except KeyboardInterrupt:
