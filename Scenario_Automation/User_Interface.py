@@ -1,6 +1,7 @@
 from Room_Manager import RoomManager
 from Simulation_controller import setup_mqtt, process_input_list
 from Utils import subscribe_to_topics, get_list, publish_position_configuration, count_files
+from LLM import get_scenario_state
 import os
 
 FOLDER_PATH = "Scenarios"
@@ -13,7 +14,8 @@ def display_menu():
     print("\n--- User Interface ---")
     print("1. Process Scenario")
     print("2. Configure Positions")
-    print("3. Exit")
+    print("3. Get Scenario States with LLM")
+    print("4. Exit")
     return input("Enter your choice: ")
 
 def process_scenario_ui(client, room_manager):
