@@ -36,6 +36,8 @@ public class Pathfinding : MonoBehaviour {
 	
 	PathRequestManager requestManager;
 	Grid grid;
+
+	public float noiseAmount = 0.5f;
 	
 	void Awake() {
 		requestManager = GetComponent<PathRequestManager>();
@@ -117,20 +119,47 @@ public class Pathfinding : MonoBehaviour {
 		
 	}
 	
-
 	Vector3[] SimplifyPath(List<Node> path) {
 		List<Vector3> waypoints = new List<Vector3>();
 		Vector2 directionOld = Vector2.zero;
-		
-		for (int i = 1; i < path.Count; i ++) {
-			Vector2 directionNew = new Vector2(path[i-1].gridX - path[i].gridX,path[i-1].gridY - path[i].gridY);
+
+		for (int i = 1; i < path.Count; i++) {
+			Vector2 directionNew = new Vector2(path[i - 1].gridX - path[i].gridX, path[i - 1].gridY - path[i].gridY);
 			if (directionNew != directionOld) {
-				waypoints.Add(path[i].worldPosition);
+				Vector3 noisyPosition = AddNoiseToPosition(path[i].worldPosition, noiseAmount); // Adjust noise amount as desired
+				waypoints.Add(noisyPosition);
 			}
 			directionOld = directionNew;
 		}
 		return waypoints.ToArray();
 	}
+
+	private Vector3 AddNoiseToPosition(Vector3 position, float noiseAmount) {
+		float noiseX = UnityEngine.Random.Range(-noiseAmount, noiseAmount);
+		float noiseZ = UnityEngine.Random.Range(-noiseAmount, noiseAmount);
+
+		return new Vector3(
+			position.x + noiseX,
+			position.y, // Preserve the y-coordinate for height consistency
+			position.z + noiseZ
+		);
+	}
+
+
+
+	// Vector3[] SimplifyPath(List<Node> path) {
+	// 	List<Vector3> waypoints = new List<Vector3>();
+	// 	Vector2 directionOld = Vector2.zero;
+		
+	// 	for (int i = 1; i < path.Count; i ++) {
+	// 		Vector2 directionNew = new Vector2(path[i-1].gridX - path[i].gridX,path[i-1].gridY - path[i].gridY);
+	// 		if (directionNew != directionOld) {
+	// 			waypoints.Add(path[i].worldPosition);
+	// 		}
+	// 		directionOld = directionNew;
+	// 	}
+	// 	return waypoints.ToArray();
+	// }
 
 	// Vector3[] SimplifyPath(List<Node> path) {
 	// 	List<Vector3> waypoints = new List<Vector3>();
