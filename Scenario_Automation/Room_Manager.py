@@ -2,11 +2,11 @@ class RoomManager:
     def __init__(self):
         # Dictionary of rooms and their objects
         self.rooms = {
-            "Room_46": ["Couch", "Chair", "Bed", "Kitchen"],
+            "Room_45": ["Couch", "Table", "Bed", "Kitchen"],
+            "Washroom_45": ["Sink", "Toilet", "Shower"],
+            "Room_46": ["Couch", "Table", "Bed", "Kitchen"],
             "Washroom_46": ["Sink", "Toilet", "Shower"],
-            "Room_47": ["Couch", "Chair", "Bed", "Kitchen"],
-            "Washroom_47": ["Sink", "Toilet", "Shower"],
-            "Hallway": ["Chair_1", "Chair_2"]
+            "Hallway": ["Couch", "Chair"]
         }
         # Dictionary to store dynamic positions for each room's objects
         self.positions = {room_id: {obj: None for obj in objs} for room_id, objs in self.rooms.items()}
