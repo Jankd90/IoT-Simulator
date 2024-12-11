@@ -3,24 +3,28 @@ import time
 from Room_Manager import RoomManager
 from Utils import subscribe_to_topics, publish_position_configuration
 import threading
+import json
 
 position_topic = "activity/position"
 activity_time_topic = "activity/time"
 
 def on_message(client, userdata, msg):
     topic_parts = msg.topic.split("/")
-    if len(topic_parts) == 3 and topic_parts[2] == "position":
+    if len(topic_parts) == 3 and topic_parts[2] == "transform":
         room_id, obj = topic_parts[0], topic_parts[1]
         try:
-            x, y = map(int, msg.payload.decode().split(","))
+            x, y, z, dig = map(float, msg.payload.decode().split(","))
             userdata['room_manager'].update_position(room_id, obj, x, y)
-        except ValueError:
-            print(f"Invalid position format for {obj} in {room_id}. Expected 'x,y'.")
+        # except ValueError:
+        #     print(f"Invalid position format for {obj} in {room_id}. Expected 'x,y'.")
+        except ValueError as e:
+            print(e)
     elif msg.topic == "activity/Finished" and msg.payload.decode() == "True":
         userdata['done'] = True
 
 def setup_mqtt(room_manager):
-    client = mqtt.Client(userdata={'done': False, 'room_manager': room_manager})
+    client = mqtt.Client()
+    client.user_data_set({'done': False, 'room_manager': room_manager})
     client.on_message = on_message
     return client
 
@@ -47,6 +51,7 @@ def process_input_list(input_list, client, room_manager):
     without using time.sleep, leveraging threading events instead.
     """
     done_event = threading.Event()
+    # print(done_event)
 
     def on_done_received():
         """Callback when 'done' is received."""
@@ -55,7 +60,7 @@ def process_input_list(input_list, client, room_manager):
     # Attach the callback for done handling
     def wrapped_on_message(client, userdata, msg):
         original_on_message(client, userdata, msg)  # Call the original on_message
-        if userdata['done']:
+        if client._userdata['done']:
             on_done_received()
 
     # Save and override the original on_message
@@ -68,19 +73,19 @@ def process_input_list(input_list, client, room_manager):
             if not position:
                 print(f"Position not found for {obj} in {room_id}, skipping.")
                 continue
-
-            client.publish(position_topic, f"{room_id}/{obj}: {position}")
+            current_position = {"x": position[0], "y": position[1], "z": position[2]}
+            client.publish(position_topic, json.dumps(current_position))
             client.publish(activity_time_topic, str(duration))
             print(f"Sent position {position} and duration {duration} for {obj} in {room_id}")
 
             # Wait for the done event to be set
             done_event.clear()
-            if not done_event.wait(timeout=200):  # Wait for a maximum of 10 seconds
+            if not done_event.wait(timeout=20):  # Wait for a maximum of 10 seconds
                 print(f"Timeout waiting for 'done' signal for {obj} in {room_id}.")
                 continue
 
             # Reset the flag for the next loop
-            client.user_data['done'] = False
+            client._userdata['done'] = False
 
     finally:
         # Restore the original on_message

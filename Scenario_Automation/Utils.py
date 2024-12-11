@@ -17,7 +17,7 @@ def subscribe_to_topics(client, room_manager):
     print(f"Subscribed to topic: activity/Finished")
     for room_id in room_manager.get_rooms():
         for obj in room_manager.get_objects_in_room(room_id):
-            topic = f"{room_id}/{obj}/position"
+            topic = f"{room_id}/{obj}/transform"
             client.subscribe(topic)
             print(f"Subscribed to topic: {topic}")
 

@@ -15,7 +15,7 @@ class RoomManager:
         if obj not in self.get_objects_in_room(room_id):
             print(f"Error: Object '{obj}' does not belong to room '{room_id}'.")
             return
-        self.positions[room_id][obj] = (x, y)
+        self.positions[room_id][obj] = (x, y, 0)
         print(f"Updated position for {obj} in {room_id}: {self.positions[room_id][obj]}")
 
     def get_position(self, room_id, obj):

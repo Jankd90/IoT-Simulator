@@ -1,12 +1,12 @@
 from Room_Manager import RoomManager
 from Simulation_controller import setup_mqtt, process_input_list
 from Utils import subscribe_to_topics, get_list, publish_position_configuration, count_files
-from LLM import get_scenario_state
+# from LLM import get_scenario_state
 import os
 
-FOLDER_PATH = "Scenarios"
+FOLDER_PATH = r"Scenario_Automation\Scenarios" # Provide the path to scenarios folder
 
-BROKER = "your_mqtt_broker_address"
+BROKER = ""
 PORT = 1883
 KEEP_ALIVE_INTERVAL = 60
 
@@ -57,8 +57,8 @@ def configure_positions_ui(client, room_manager):
         pos_input = input("> ")
         if pos_input:
             try:
-                x, y, width, height = map(int, pos_input.split(","))
-                new_positions[obj] = (x, y, width, height)
+                x, y, width, height = map(float, pos_input.split(","))
+                new_positions[obj] = (x, y, -1.5, height)
             except ValueError:
                 print("Invalid format. Skipping this object.")
     publish_position_configuration(room_id, new_positions, client, room_manager)
