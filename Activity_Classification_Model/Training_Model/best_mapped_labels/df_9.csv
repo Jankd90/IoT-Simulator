@@ -1,0 +1,11 @@
+sorted_annotations,mappings
+leisure;miscellaneous;walking;21070 (generic) walking and occasional standing (no more than two consecutive images);MET 2.5,9
+leisure;recreation;outdoor;5175 walking/running playing with child(ren);MET 3.5,9
+occupation;interruption;walking;11791 walking on job in office or lab area;MET 2.0,9
+occupation;interruption;walking;11795 walking on job and carrying light objects such as boxes or pushing trolleys;MET 3.5,9
+occupation;interruption;walking;17070 walking downstairs;MET 3.5,9
+occupation;interruption;walking;17133 walking upstairs;MET 4.0,9
+transportation;walking;17161 walking not as the single means of transports e.g.from house to transports or vice versa/from car to places or vice versa/between transports;MET 2.5,9
+transportation;walking;17250 walking as the single means to a destination not to work or class;MET 3.0,9
+transportation;walking;17270 walking as the single means to work or class (not from);MET 3.5,9
+walking;MET 3.0,9

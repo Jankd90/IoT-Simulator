@@ -1,0 +1,79 @@
+sorted_annotations,mappings
+home activity;child/elderly/pet care;MET 2.3,7
+home activity;child/elderly/pet care;child care;5183 standing holding child;MET 2.0,7
+home activity;child/elderly/pet care;child care;5185 child care sitting/kneeling occasional lifting;MET 2.0,7
+home activity;child/elderly/pet care;child care;5186 child care standing occasional lifting;MET 3.0,7
+home activity;child/elderly/pet care;pet care;MET 2.5,7
+home activity;eating;13035 eating standing alone or with others;MET 2.0,7
+home activity;household chores;house cleaning;MET 2.5,7
+home activity;household chores;house cleaning;floors;5010 cleaning sweeping carpet or floors;MET 3.3,7
+home activity;household chores;house cleaning;floors;5131 scrubbing floors on hands and knees scrubbing bathroom bathtub;MET 2.0,7
+home activity;household chores;house cleaning;furniture;5020 cleaning heavy such as car/windows/garage;MET 3.5,7
+home activity;household chores;house cleaning;furniture;5032 dusting or polishing furniture;MET 2.3,7
+home activity;household chores;house cleaning;miscellaneous;5100 making bed/changing linens;MET 3.3,7
+home activity;household chores;preparing meals/cooking/washing dishes;5035 cleaning up table after meal implied walking (e.g. leaving from eating table to the kitchen);MET 3.3,7
+home activity;household chores;preparing meals/cooking/washing dishes;5035 kitchen activity general cooking/washing/dishes/cleaning up;MET 3.3,7
+home activity;household chores;preparing meals/cooking/washing dishes;5051 serving food/setting table implied walking and standing;MET 2.5,7
+home activity;household chores;washing/ironing/mending clothes;5070 ironing;MET 1.8,7
+home activity;household chores;washing/ironing/mending clothes;5090 folding or hanging clothes/put clothes in or out of washer or dryer/packing suitcase limited walking;MET 2.0,7
+home activity;household chores;washing/ironing/mending clothes;5095 putting away /gathering clothes involving walking;MET 2.3,7
+home activity;leisure;sitting;sitstand+activity;MET 2.5,7
+home activity;miscellaneous;5025 (generic) multiple household tasks all at once including standing/lifting/sitting;MET 2.8,7
+home activity;miscellaneous;standing;5146 standing packing/unpacking household items occasional lifting;MET 3.5,7
+home activity;miscellaneous;standing;5146 standing packing/unpaking household items occational lifting;MET 3.5,7
+home activity;miscellaneous;standing;9070 standing reading or without observable/identifiable activities;MET 1.8,7
+home activity;miscellaneous;standing;9071 (generic) standing miscellaneous;MET 2.5,7
+home activity;miscellaneous;walking;5121 walking with moving and lifting loads such as bikes and furniture;MET 4.0,7
+home activity;miscellaneous;walking;5147 walking moving away light items (pens/papers/keys not included);MET 3.0,7
+home activity;miscellaneous;walking;5165 (generic) walking non-cleaning task such as closing windows lock door putting away items;MET 3.5,7
+home activity;self care;13000 getting ready for bed standing;MET 2.3,7
+home activity;self care;13020 dressing/undressing;MET 2.5,7
+home activity;self care;13040 (generic) self care such as grooming/washing hands/shaving/brushing teeth/putting on make-up not eliminating and bathing (not necessary in the toilet);MET 2.0,7
+home activity;self care;13045 hairstyling standing;MET 2.5,7
+household-chores;sitstand+activity;MET 2.5,7
+household-chores;sitstand+activity;MET 4.0,7
+household-chores;walking+activity;MET 3.0,7
+leisure;eating;not-social;13030 eating sitting indoor/outdoor;MET 1.5,7
+leisure;miscellaneous;17031 loading /unloading a car implied walking;MET 3.5,7
+leisure;miscellaneous;21017 standing child care only active periods;MET 3.0,7
+leisure;miscellaneous;21070 (generic) walking/standing combination indoor;MET 3.0,7
+leisure;miscellaneous;9071 (generic) standing miscellaneous indoor or outdoor;MET 2.5,7
+leisure;miscellaneous;sitting;21016 sitting child care only active periods;MET 2.0,7
+leisure;miscellaneous;walking;17031 loading /unloading a car implied walking;MET 3.5,7
+manual-work;MET 8.0,7
+manual-work;sitstand+activity;MET 1.5,7
+manual-work;sitstand+activity;MET 2.0,7
+manual-work;sitstand+activity;MET 3.0,7
+manual-work;sitstand+activity;MET 5.0,7
+manual-work;sitstand+activity;MET 5.5,7
+manual-work;walking+activity;MET 3.0,7
+manual-work;walking+activity;MET 3.5,7
+manual-work;walking+activity;MET 3.8,7
+manual-work;walking+activity;MET 5.5,7
+mixed-activity;MET 4.5,7
+mixed-activity;sitstand+activity;MET 2.5,7
+occupation;interruption;11791 walking on job in office or lab area;MET 2.0,7
+occupation;interruption;11795 walking on job and carrying light objects such as boxes or pushing trolleys;MET 3.5,7
+occupation;interruption;13009 toilet break;MET 1.8,7
+occupation;interruption;13035 eating standing;MET 2.0,7
+occupation;interruption;5041 kitchen activity in the working place;MET 1.8,7
+occupation;interruption;9015 standing scanning documents;MET 1.5,7
+occupation;interruption;9050 standing talking in persone/using a phone/smartphone/tablet;MET 1.8,7
+occupation;interruption;miscellaneous;5041 kitchen activity in the working place;MET 1.8,7
+occupation;interruption;standing;9015 standing scanning documents;MET 1.5,7
+occupation;interruption;standing;9020 standing writing/drawing/painting;MET 1.8,7
+occupation;interruption;standing;9050 standing talking in persone/using a phone/smartphone/tablet;MET 1.8,7
+occupation;interruption;standing;9071 (generic) standing miscellaneous;MET 2.5,7
+occupation;miscellaneous;11475 (generic) manual labour;MET 2.8,7
+occupation;miscellaneous;11475 (generic) manual or unskilled labour;MET 2.8,7
+occupation;miscellaneous;11615 (generic) standing lifting items continuously with limited walking;MET 4.5,7
+occupation;office and administrative support;11600 (generic) standing tasks such as store clerk/libarian/packing boxes/repair heavy parts;MET 3.0,7
+sitting;sitstand+activity;MET 1.8,7
+sitting;sitstand+lowactivity;MET 1.5,7
+sports/gym;MET 5.0,7
+sports/gym;MET 6.0,7
+standing;sitstand+activity;MET 2.0,7
+standing;sitstand+activity;social;MET 2.5,7
+transportation;walking;12150 running;MET 8.0,7
+transportation;walking;9071 standing miscellaneous (talking to others etc.);MET 2.5,7
+vehicle;MET 1.3,7

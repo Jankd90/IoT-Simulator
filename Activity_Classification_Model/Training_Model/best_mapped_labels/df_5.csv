@@ -1,0 +1,50 @@
+sorted_annotations,mappings
+7030 sleeping;MET 0.95,5
+home activity;eating;13030 eating sitting alone or with someone;MET 1.5,5
+home activity;leisure;activities for maintenance of a household;miscellaneous;9100 retreat/family reunion activities involving sitting eating relaxing talking with more than one person;MET 1.8,5
+home activity;leisure;activties for maintenance of a household;9100 retreat/family reunion activities involving sitting eating relaxing talking with more than one person;MET 1.8,5
+home activity;leisure;activties for maintenance of a household;miscellaneous;9100 retreat/family reunion activities involving sitting eating relaxing talking with more than one person;MET 1.8,5
+home activity;leisure;activties for maintenance of a household;with children;5170 sitting playing with child(ren);MET 2.2,5
+home activity;miscellaneous;sitting;7010 lying and watching television with TV on as the primary activity;MET 1.0,5
+home activity;miscellaneous;sitting;7010 sitting/lying and watching television with TV on as the primary activity;MET 1.0,5
+home activity;miscellaneous;sitting;7021 sitting without observable actiivties;MET 1.3,5
+home activity;miscellaneous;sitting;9030  sitting desk work (with or without eating at the same time);MET 1.3,5
+home activity;miscellaneous;sitting;9030 sitting desk work (with or without eating at the same time);MET 1.3,5
+home activity;miscellaneous;sitting;9055 sitting/lying talking in person/using a mobile phone/smartphone/tablet or talking on the phone/computer (skype chatting);MET 1.5,5
+home activity;miscellaneous;sitting;9060 sitting reading or using a mobile phone/smartphone/tablet or talking on the phone/computer (skype chatting);MET 1.3,5
+home activity;miscellaneous;sitting;9060 sitting/lying reading or without observable activities;MET 1.3,5
+home activity;miscellaneous;sitting;9060 sitting/lying reading or without observable/identifiable activities;MET 1.3,5
+home activity;miscellaneous;standing;9050 standing talking in person on the phone/computer (skype chatting) or using a mobileo phone/smartphone/tablet;MET 1.8,5
+home activity;miscellaneous;standing;9050 standing talking in person/on the phone/computer (skype chatting) or using a mobile phone/smartphone/tablet;MET 1.8,5
+home activity;miscellaneous;standing;9070 standing reading or without obvious activities;MET 1.8,5
+home activity;self care;13009 toilet eliminating or squatting;MET 1.8,5
+leisure;eating;13030 eating sitting indoor/outdoor;MET 1.5,5
+leisure;eating;5060 buying foods or drinks as a takeaway;MET 2.3,5
+leisure;eating;not-social;5060 buying foods or drinks as a takeaway;MET 2.3,5
+leisure;eating;social;13030 eating sitting indoor/outdoor;MET 1.5,5
+leisure;eating;social;13035 eating standing indoor/outdoor;MET 2.0,5
+leisure;miscellaneous;21000 sitting meeting or talking with others;MET 1.5,5
+leisure;miscellaneous;21016 sitting child care only active periods;MET 2.0,5
+leisure;miscellaneous;sitting;21000 sitting meeting;MET 1.5,5
+leisure;miscellaneous;sitting;9055 sitting talking to person/using the phone;MET 1.5,5
+leisure;miscellaneous;sitting;9060 (generic) sitting/lying reading or without observable activities;MET 1.3,5
+leisure;miscellaneous;sitting;9060 (generic) sitting/lying reading or without observable/identifiable activities;MET 1.3,5
+leisure;miscellaneous;standing;9050 standing talking in person/using a phone/smartphone/tablet;MET 1.8,5
+leisure;miscellaneous;standing;9070 standing reading or without observable/identifiable activities;MET 1.8,5
+leisure;miscellaneous;standing;9070 standing reading or without obvious activities;MET 1.8,5
+leisure;miscellaneous;standing;9071 (generic) standing miscellaneous;MET 2.5,5
+occupation;interruption;11585 sitting meeting/talking to colleagues with or without eating;MET 1.5,5
+occupation;interruption;17133 walking upstairs;MET 4.0,5
+occupation;interruption;9060 (generic) sitting without observable/identifiable activities;MET 1.3,5
+occupation;interruption;9070 standing reading or without obvious activities;MET 1.8,5
+occupation;interruption;sitting;11585 sitting meeting/talking to colleagues with or without eating;MET 1.5,5
+occupation;interruption;sitting;9060 sitting without observable/identifiable activities;MET 1.3,5
+occupation;interruption;standing;9050 standing talking in person/using a phone/smartphone/tablet;MET 1.8,5
+occupation;interruption;standing;9070 standing reading or without observable/identifiable activities;MET 1.8,5
+sitting;sitstand+activity;social;MET 1.8,5
+sitting;sitstand+lowactivity;MET 1.3,5
+sports/gym;MET 3.0,5
+sports/gym;MET 5.5,5
+transportation;waiting;7021 sitting;MET 1.3,5
+transportation;waiting;7040 standing in a line;MET 1.3,5
+transportation;walking;9050 standing miscellaneous (talking to others etc.);MET 1.8,5
